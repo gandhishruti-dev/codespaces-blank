@@ -26,11 +26,16 @@ namespace MyWebApi.Services
                 _patients.TryAdd(patient.Id, patient);
             }
         }
+        public async Task<List<Patient>> GetPatients()
+        {
+            var patientsList = _patients.Values.ToList();
 
+            return await Task.FromResult(patientsList);
+        }
+        
         public async Task<Patient?> GetPatient(int id)
         {
             var patient = _patients.FirstOrDefault(p => p.Key == id).Value;
-            PiiProtectedLogger.LogInfo($"Retrieved patient with ID: {id}");
             return await Task.FromResult(patient);
         }
 
@@ -56,7 +61,6 @@ namespace MyWebApi.Services
                 Diagnosis = patient.Diagnosis
             };
             _patients.TryAdd(newPatient.Id, newPatient);
-            PiiProtectedLogger.LogInfo($"Created new patient with ID: {newPatient.Id}, Name: {newPatient.FirstName} {newPatient.LastName}");
             return await Task.FromResult(newPatient);
         }
 
@@ -65,7 +69,6 @@ namespace MyWebApi.Services
             var oldPatient = _patients.FirstOrDefault(p => p.Key == id).Value;
             if (oldPatient == null)
             {
-                PiiProtectedLogger.LogWarning($"Attempted to update non-existent patient with ID: {id}");
                 return await Task.FromResult<Patient?>(null);
             }
             
@@ -81,7 +84,6 @@ namespace MyWebApi.Services
             };
             _patients.TryRemove(id, out _); 
             _patients.TryAdd(id, updatedPatient);
-            PiiProtectedLogger.LogInfo($"Updated patient with ID: {id}");
             return await Task.FromResult(updatedPatient);
         }
 
@@ -90,11 +92,9 @@ namespace MyWebApi.Services
             var patient = _patients.FirstOrDefault(p => p.Key == id).Value;
             if (patient == null)
             {
-                PiiProtectedLogger.LogWarning($"Attempted to delete non-existent patient with ID: {id}");
                 return await Task.FromResult(false);
             }
             _patients.TryRemove(id, out _);
-            PiiProtectedLogger.LogInfo($"Deleted patient with ID: {id}");
             return await Task.FromResult(true);
         }   
     }

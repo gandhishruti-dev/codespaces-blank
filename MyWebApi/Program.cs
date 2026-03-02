@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyWebApi;
 using MyWebApi.Interfaces;
+using MyWebApi.Logging;
 using MyWebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IPatientService, PatientDataInMemoryService>();
+builder.Services.AddScoped<IPatientService, PatientDataFromFileService>();
+builder.Services.AddSingleton<ILoggerService, PiiHashedFileLogger>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

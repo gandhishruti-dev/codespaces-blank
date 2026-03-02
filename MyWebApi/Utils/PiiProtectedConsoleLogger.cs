@@ -1,9 +1,10 @@
 using System;
 using System.Text.RegularExpressions;
+using MyWebApi.Interfaces;
 
 namespace MyWebApi.Logging
 {
-    public static class PiiProtectedLogger
+    public class PiiProtectedConsoleLogger: ILoggerService
     {
         private static readonly string[] PiiPatterns = new[]
         {
@@ -34,13 +35,13 @@ namespace MyWebApi.Logging
             return masked;
         }
 
-        public static void LogInfo(string message)
+        public  void LogInfo(string message)
         {
             var maskedMessage = MaskPii(message);
             Console.WriteLine($"[INFO] {DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} - {maskedMessage}");
         }
 
-        public static void LogError(string message, Exception ex = null)
+        public  void LogError(string message, Exception ex = null)
         {
             var maskedMessage = MaskPii(message);
             var maskedExceptionMessage = ex != null ? MaskPii(ex.Message) : string.Empty;
@@ -50,7 +51,7 @@ namespace MyWebApi.Logging
                 Console.WriteLine($"[ERROR] Exception: {maskedExceptionMessage}");
         }
 
-        public static void LogWarning(string message)
+        public  void LogWarning(string message)
         {
             var maskedMessage = MaskPii(message);
             Console.WriteLine($"[WARNING] {DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} - {maskedMessage}");

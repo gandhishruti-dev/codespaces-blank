@@ -18,6 +18,11 @@ namespace MyWebApi.Services
             //_patients = LoadPatientsFromFile();
         }
 
+        public async Task<List<Patient>> GetPatients()
+        {
+            List<Patient> _patients = LoadPatientsFromFile();
+            return await Task.FromResult(_patients);
+        }
         public async Task<Patient?> GetPatient(int id)
         {
             List<Patient> _patients = LoadPatientsFromFile();

@@ -1,0 +1,8 @@
+2026-03-02 22:31:52 - Attempting to retrieve all patients
+2026-03-02 22:31:52 - Successfully retrieved all patients
+2026-03-02 22:32:02 - Attempting to retrieve patient with ID: 3
+2026-03-02 22:32:02 - Successfully retrieved patient with ID: 3
+2026-03-02 22:53:13 - Attempting to retrieve all patients
+2026-03-02 22:53:13 - Successfully retrieved all patients
+2026-03-02 22:54:10 - Attempting to retrieve patient with ID: 2
+2026-03-02 22:54:10 - Successfully retrieved patient with ID: 2

@@ -14,10 +14,12 @@ namespace MyWebApi.Tests
         private readonly Mock<IPatientService> _mockPatientService;
         private readonly PatientController _controller;
 
+        private readonly Mock<ILoggerService> _mockLogger;
         public PatientControllerTests()
         {
             _mockPatientService = new Mock<IPatientService>();
-            _controller = new PatientController(_mockPatientService.Object);
+            _mockLogger = new Mock<ILoggerService>();
+            _controller = new PatientController(_mockPatientService.Object, _mockLogger.Object);
         }
 
         #region GetPatient Tests

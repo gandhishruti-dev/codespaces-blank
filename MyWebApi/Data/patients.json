@@ -12,7 +12,7 @@
             "AddressLine2": "Apt 4B",
             "City": "Anytown",
             "State": "CA",
-            "Zip": "12345"
+            "ZipCode": "92345"
         }
     },
     {
@@ -28,7 +28,7 @@
             "AddressLine2": "Apt 4B",
             "City": "Libertyville",
             "State": "CA",
-            "Zip": "92346"
+            "ZipCode": "92346"
         }
     },
     {
@@ -44,7 +44,7 @@
             "AddressLine2": "Apt 4B",
             "City": "MainTown",
             "State": "CA",
-            "Zip": "93452"
+            "ZipCode": "93452"
         }
     },
     {
@@ -60,7 +60,7 @@
             "AddressLine2": "Apt 4B",
             "City": "Oakville",
             "State": "CA",
-            "Zip": "94567"
+            "ZipCode": "94567"
         }
     }
 ]
