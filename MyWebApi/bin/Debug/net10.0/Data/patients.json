@@ -1,0 +1,66 @@
+[
+    {
+        "Id": 1,
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Age": 30,
+        "Gender": "Male",
+        "Diagnosis": "Flu",
+        "Address": 
+        {
+            "AddressLine1": "123 Main St",
+            "AddressLine2": "Apt 4B",
+            "City": "Anytown",
+            "State": "CA",
+            "Zip": "12345"
+        }
+    },
+    {
+        "Id": 2,
+        "FirstName": "Jane",
+        "LastName": "Smith",
+        "Age": 25,
+        "Gender": "Female",
+        "Diagnosis": "Headache",
+        "Address": 
+        {
+            "AddressLine1": "123 Randolf St",
+            "AddressLine2": "Apt 4B",
+            "City": "Libertyville",
+            "State": "CA",
+            "Zip": "92346"
+        }
+    },
+    {
+        "Id": 3,
+        "FirstName": "Bob",
+        "LastName": "Builder",
+        "Age": 50,
+        "Gender": "Male",
+        "Diagnosis": "Shoulder Pain",
+        "Address": 
+        {
+            "AddressLine1": "123 State St",
+            "AddressLine2": "Apt 4B",
+            "City": "MainTown",
+            "State": "CA",
+            "Zip": "93452"
+        }
+    },
+    {
+        "Id": 4,
+        "FirstName": "Alice",
+        "LastName": "Johnson",
+        "Age": 40,
+        "Gender": "Female",
+        "Diagnosis": "Back Pain",
+        "Address": 
+        {
+            "AddressLine1": "123 Oak St",
+            "AddressLine2": "Apt 4B",
+            "City": "Oakville",
+            "State": "CA",
+            "Zip": "94567"
+        }
+    }
+]
